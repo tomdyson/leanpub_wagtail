@@ -1,8 +1,8 @@
 # Chapter 1 Create Wagtail Project
 
-Wagtail is one of the top CMS framework in Python world based on Django. In the blog post [Python CMS Framework Review: Wagtail vs django-cms](https://blog.michaelyin.info/2017/06/19/python-cms-framework-review-wagtail-vs-django-cms/) I have discussed the difference between Django-CMS and Wagtail CMS. As I said, Wagtail is very flexible and easy to customize compared with Django CMS, and I will show you how to create a standard blog from scratch using Wagtail CMS from scratch in this book.
+Wagtail is one of the top CMS framework in Python world based on Django. In the blog post [Python CMS Framework Review: Wagtail vs django-cms](https://blog.michaelyin.info/2017/06/19/python-cms-framework-review-wagtail-vs-django-cms/) I have discussed the difference between Django-CMS and Wagtail CMS. As I said, Wagtail is very flexible and easy to customize compared with Django CMS, and I will show you how to create a standard blog from scratch using Wagtail CMS from scratch in this Wagtail tutorial.
 
-## Install Wagtail
+### Install Wagtail
 
 It is strongly recommended to install Wagtail CMS in a virtualenv which is an isolated env for Python packages. If you have no idea what is virtualenv, please install it and learn it [here](https://virtualenv.pypa.io/en/stable/), it is very easy, do not worry about that.
 
@@ -16,7 +16,7 @@ Now virtualenv has been activated, you can see `wagtail_env` shows up in your sh
 ```bash
 pip install wagtail
 
-# this command would create project wagtail_tuto similar to `django-admin startproject`
+# this command would create project wagtail_tuto similar to `Django-admin startproject`
 wagtail start wagtail_tuto
 
 cd wagtail_tuto
@@ -27,7 +27,7 @@ cd wagtail_tuto
 
 Now you can go to `http://localhost:8000` to check the web page, you will see `Welcome to your new Wagtail site` message on the page.
 
-## Project structure
+### Project structure
 
 In the last section, we use a built-in command ship with Wagtail to create a Wagtail project, now let's take a look at the project structure.
 
@@ -74,7 +74,7 @@ In the last section, we use a built-in command ship with Wagtail to create a Wag
 
 Here is the project structure of the wagtail_tuto, and this is a classic Django project, `home` is an app to help people get started quickly, `search` is an app which adds search function to this project.
 
-First, you can notice that the `home` app here have django migration `0002_create_homepage.py`, this migration file create a page in wagtail and set it as root page of localhost site. Here is part of the code
+First, you can notice that the `home` app here have Django migration `0002_create_homepage.py`, this migration file create a page in wagtail and set it as root page of localhost site. Here is part of the code
 
 ```python
 def create_homepage(apps, schema_editor):
@@ -136,11 +136,11 @@ Here is quote from wagtail official doc, after you read it you can know the work
 
 > Wagtail uses normal Django templates to render each page type. By default, it will look for a template filename formed from the app and model name, separating capital letters with underscores (e.g. HomePage within the ‘home’ app becomes home/home_page.html
 
-From the project structure above, there is `home_page.html` in templates inside `home` and we can found out the the html in it is indeed the html of `http://127.0.0.1:8000`. 
+From the project structure above, there is `home_page.html` in templates inside `home` and we can found out the html in it is indeed the html of `http://127.0.0.1:8000`. 
 
-## Start to play with templates
+### Start to play with templates
 
-Now we try to change template to show the tilte of `HomePage`, because the root page of localhost is this type. 
+Now we try to change the template to show the title of `HomePage`, because the root page of localhost is this type. 
 
 Edit the `home/templates/home/home_page.html`
 
@@ -150,9 +150,9 @@ Edit the `home/templates/home/home_page.html`
 {% endblock %}
 ```
 
-Now revisit `http://127.0.0.1:8000/` you can see the content has changed. Wagtail has just help us pull data from db and render the html quickly, which is very simple. 
+Now revisit `http://127.0.0.1:8000/` you can see the content has changed. Wagtail has just help us pull data from DB and render the HTML quickly, which is very simple. 
 
-## Conclusion
+### Conclusion
 
 In this chapter, I create a wagtail project, and talked about the project structure, the multi-site feature of wagtail, how the http request is handled by this Django project, all these basic points here are very important and I really wish you can get them before start coding. 
 
@@ -163,7 +163,9 @@ git clone https://github.com/michael-yin/wagtail_tuto.git
 cd wagtail_tuto
 git checkout 826ec1c
 
-# setup the env from the code above
+# setup virtualenv
+pip install -r requirements.txt
+
 ./manage.py runserver
 ```
 
